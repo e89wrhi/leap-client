@@ -21,6 +21,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@vercel/analytics": "^1.6.1",
     "class-variance-authority": "^0.7.1",
+    "@t3-oss/env-nextjs": "^0.11.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "lucide-react": "^0.562.0",
@@ -28,7 +29,8 @@
     "next-themes": "^0.4.6",
     "sonner": "^1.7.4",
     "tailwind-merge": "^3.3.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@leap/typescript-config": "*",
