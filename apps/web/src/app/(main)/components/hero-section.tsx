@@ -15,18 +15,27 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center text-center px-4 pt-40 pb-20">
+    <section className="relative flex flex-col items-center justify-center text-center px-4 pt-20 pb-20">
       {/* Background gradient glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[600px] w-[900px] rounded-full bg-blue-100/40 blur-3xl dark:bg-blue-950/20" />
       </div>
 
+      <Image
+        src={'/main.png'}
+        alt="Leap AI"
+        height={400}
+        width={400}
+        className="relative h-100 w-66"
+      />
       <h1 className="relative max-w-3xl text-5xl font-bold tracking-tight text-neutral-950 dark:text-white sm:text-6xl leading-[1.08]">
         Provider-agnostic AI layer for .NET apps and agents
       </h1>
 
       <p className="relative mt-6 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed">
-        A unified .NET SDK for building AI-powered apps with streaming, tool calling, and structured output—powered by OpenAI, Anthropic, and Google Gemini.
+        A unified .NET SDK for building AI-powered apps with streaming, tool
+        calling, and structured output—powered by OpenAI, Anthropic, and Google
+        Gemini.
       </p>
 
       {/* CTA links */}
@@ -55,7 +64,11 @@ export function HeroSection() {
         <span className="text-neutral-400 dark:text-neutral-600">$</span>
         <span>dotnet add package LeapAi.Sdk</span>
         <span className="ml-2 text-neutral-400 dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors">
-          {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+          {copied ? (
+            <Check className="h-4 w-4 text-green-500" />
+          ) : (
+            <Copy className="h-4 w-4" />
+          )}
         </span>
       </button>
     </section>
