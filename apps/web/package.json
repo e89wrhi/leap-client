@@ -8,12 +8,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:e2e": "playwright test",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "preview": "next build && next start",
     "vercel-build": "npm rebuild sharp && next build"
   },
   "dependencies": {
+    "@leap/config": "*",
     "@leap/lib": "*",
     "@leap/ui": "*",
     "@radix-ui/react-label": "^2.1.8",
@@ -33,6 +39,13 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@leap/config": "*",
+    "vitest": "latest",
+    "@playwright/test": "^1.50.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@leap/typescript-config": "*",
     "@next/eslint-plugin-next": "^15.5.3",
     "@tailwindcss/postcss": "^4.1.13",
