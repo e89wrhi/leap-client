@@ -1,0 +1,83 @@
+---
+title: Privacy
+description: Privacy Policy for the Leap AI SDK and platform services.
+---
+
+# Privacy Policy  
+_Last updated: 29 April 2026_
+
+Leap AI (“we”, “our”, “us”) is committed to protecting the privacy of individuals who use our AI SDKs, platform, and documentation services. This Privacy Policy explains how we collect, process, and protect your information when you interact with the Leap AI ecosystem.
+
+<Callout type="info">
+  We prioritize data security and transparency, especially regarding the sensitive nature of AI model interactions and enterprise data.
+</Callout>
+
+---
+
+## Table of Contents
+
+1. [Consent](#consent)  
+2. [Information We Collect](#information-we-collect)  
+3. [AI Data & Model Processing](#ai-data--model-processing)
+4. [How We Use Your Information](#how-we-use-your-information)  
+5. [Legal Basis for Processing](#legal-basis-for-processing)  
+6. [Data Retention & Deletion](#data-retention--deletion)  
+7. [User Rights](#user-rights)  
+8. [Cookies & Tracking](#cookies--tracking)  
+9. [Third-Party Integrations](#third-party-integrations)  
+10. [Security Practices](#security-practices)  
+11. [International Transfers](#international-transfers)  
+12. [Children’s Privacy](#childrens-privacy)  
+13. [Changes to This Policy](#changes-to-this-policy)  
+14. [Contact Us](#contact-us)
+
+---
+
+## Consent
+
+By accessing or using Leap AI, you acknowledge that you have read and understood this Privacy Policy and consent to the collection, use, and disclosure of information as outlined. Our SDKs and APIs are designed with "Privacy by Design" principles to ensure minimal data exposure.
+
+---
+
+## Information We Collect
+
+We collect information to provide, secure, and improve our AI services.
+
+| Category | Examples | Purpose |
+|---------|----------|---------|
+| **Account Information** | Email, GitHub ID, API keys | Account creation, authentication, billing |
+| **API Usage Data** | Request metadata, token counts, latency metrics | Scaling, usage monitoring, infrastructure optimization |
+| **Technical Data** | OS version (.NET framework), SDK version, IP address | Debugging SDK compatibility, performance tracking |
+| **Communication** | Support tickets, feedback, feature requests | Improving developer experience |
+
+---
+
+## AI Data & Model Processing
+
+When you use the Leap AI SDK to interact with various providers (OpenAI, Anthropic, Google):
+
+- **Prompt Data**: We do not store the content of your prompts or AI responses unless you explicitly enable logging or debugging features in your pipeline configuration.
+- **Provider Passthrough**: Data sent to third-party providers via Leap AI is subject to those providers' respective privacy policies.
+- **Training**: By default, Leap AI **does not** use your prompt data or generated weights to train our own models.
+
+---
+
+## How We Use Your Information
+
+We use the information we collect for:
+
+- Operating and maintaining the Leap AI SDK and platform 
+- Personalizing documentation and developer dashboard experience 
+- Detecting and preventing API abuse or security threats  
+- Providing technical support for SDK implementation
+- Complying with legal requirements 
+
+### Dynamic Privacy View
+
+```tsx
+{user?.isDeveloper ? (
+  <p>You have access to the Developer Console. Your API keys are encrypted at rest and never shared.</p>
+) : (
+  <p>You are viewing public documentation. Standard telemetry applies to site interactions.</p>
+)}
+```

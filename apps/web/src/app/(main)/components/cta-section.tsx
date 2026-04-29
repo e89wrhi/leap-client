@@ -5,35 +5,38 @@ const FOOTER_COLUMNS = [
   {
     heading: 'GET STARTED',
     links: [
-      { label: 'Installation', href: '#' },
-      { label: 'Quick Start', href: '#' },
-      { label: 'NuGet Packages', href: 'https://www.nuget.org/packages/LeapAi.Sdk' },
+      { label: 'Installation', href: '/docs/getting-started/installation' },
+      { label: 'Quick Start', href: '/docs/getting-started/quick-start' },
+      {
+        label: 'NuGet Packages',
+        href: 'https://www.nuget.org/packages/LeapAi.Sdk',
+      },
     ],
   },
   {
-    heading: 'BUILD',
+    heading: 'CONCEPTS',
     links: [
-      { label: 'Text Generation', href: '#' },
-      { label: 'Streaming', href: '#' },
-      { label: 'Structured Data', href: '#' },
-      { label: 'Tool Calling', href: '#' },
-      { label: 'Agents', href: '#' },
+      {
+        label: 'Text Generation',
+        href: '/docs/core-concepts/chat-and-streaming',
+      },
+      { label: 'Streaming', href: '/docs/core-concepts/chat-and-streaming' },
+      { label: 'Structured Data', href: '/docs/core-concepts/structured-data' },
     ],
   },
   {
     heading: 'PROVIDERS',
     links: [
-      { label: 'OpenAI', href: '#' },
-      { label: 'Anthropic', href: '#' },
-      { label: 'Google Gemini', href: '#' },
+      { label: 'OpenAI', href: '/docs/integrations/providers' },
+      { label: 'Anthropic', href: '/docs/integrations/providers' },
+      { label: 'Google Gemini', href: '/docs/integrations/providers' },
     ],
   },
   {
     heading: 'RESOURCES',
     links: [
       { label: 'GitHub', href: 'https://github.com/e89wrhi/leap-ai-sdk' },
-      { label: 'Changelog', href: '#' },
-      { label: 'Contributing', href: '#' },
+      { label: 'Contributing', href: '/docs/community/contributing' },
     ],
   },
 ];
@@ -50,7 +53,8 @@ export function CtaSection() {
           Start building AI apps in .NET today
         </h2>
         <p className="relative mt-4 text-neutral-400 max-w-xl mx-auto leading-relaxed">
-          Install the Leap AI SDK from NuGet and connect to any LLM provider in minutes.
+          Install the Leap AI SDK from NuGet and connect to any LLM provider in
+          minutes.
         </p>
         <div className="relative mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
@@ -89,7 +93,17 @@ export function CtaSection() {
                         href={link.href}
                         className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
                       >
-                        {link.label}
+                        {col.heading === 'GET STARTED' &&
+                        link.label !== 'NuGet Packages' ? (
+                          <span className="flex items-center gap-1">
+                            {link.label}
+                            <span className="text-[10px] bg-blue-500/10 text-blue-500 px-1 rounded">
+                              New
+                            </span>
+                          </span>
+                        ) : (
+                          link.label
+                        )}
                       </Link>
                     </li>
                   ))}
@@ -99,12 +113,21 @@ export function CtaSection() {
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-200 dark:border-neutral-800/60 pt-8 text-sm text-neutral-400 dark:text-neutral-500">
-            <p>© {new Date().getFullYear()} Leap AI SDK. Open source under the MIT license.</p>
+            <p>
+              © {new Date().getFullYear()} Leap AI SDK. Open source under the
+              MIT license.
+            </p>
             <div className="flex items-center gap-4">
-              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">
+              <Link
+                href="/privacy"
+                className="hover:text-neutral-900 dark:hover:text-white transition-colors"
+              >
                 Privacy
               </Link>
-              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">
+              <Link
+                href="/terms"
+                className="hover:text-neutral-900 dark:hover:text-white transition-colors"
+              >
                 Terms
               </Link>
             </div>

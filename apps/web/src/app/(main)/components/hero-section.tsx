@@ -48,7 +48,7 @@ export function HeroSection() {
         </Link>
         <span className="h-4 w-px bg-neutral-300 dark:bg-neutral-700" />
         <Link
-          href="#features"
+          href="/docs"
           className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
         >
           View Docs
