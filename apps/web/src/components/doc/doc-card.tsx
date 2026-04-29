@@ -23,7 +23,7 @@ export default function DocCard({ item, readTime }: DocCardProps) {
             height={100}
             width={100}
             className="h-15 w-15 object-cover duration-300 group-hover:scale-[1.02]"
-            // The original component used explicit width/height which is less common with Next/Image fill
+          // The original component used explicit width/height which is less common with Next/Image fill
           />
         </div>
 
