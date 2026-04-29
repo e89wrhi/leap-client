@@ -68,7 +68,7 @@ export function NavBar() {
   return (
     <header className="fixed top-4 z-50 w-full px-4 flex justify-center pointer-events-none">
       <div className="w-full max-w-5xl pointer-events-auto">
-        <div className="flex h-14 items-center justify-between rounded-full border border-neutral-200/60 bg-white/70 px-6 shadow-lg shadow-neutral-200/20 backdrop-blur-xl dark:border-neutral-800/60 dark:bg-neutral-950/70 dark:shadow-black/40 transition-all">
+        <div className="flex h-14 items-center justify-between rounded-full border border-neutral-200/60 bg-white/70 px-6 shadow-lg shadow-neutral-200/20 backdrop-blur-xl dark:border-neutral-800/60 dark:bg-neutral-950/70 dark:shadow-black/40 transition-all text-neutral-900 dark:text-neutral-50">
           {/* Left: Logo & Name */}
           <div className="flex items-center gap-8">
             <Link
@@ -83,13 +83,22 @@ export function NavBar() {
                   className="object-contain"
                 />
               </div>
-              <span className="hidden text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-50 sm:block">
+              <span className="hidden text-lg font-bold tracking-tight sm:block">
                 Leap
               </span>
             </Link>
+
+            <nav className="hidden md:flex items-center gap-6">
+              <Link
+                href="/docs/introduction"
+                className="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors"
+              >
+                Docs
+              </Link>
+            </nav>
           </div>
 
-          {/* Right: Search & Theme */}
+          {/* Right: Feedback & Theme */}
           <div className="flex items-center gap-1 sm:gap-2">
             <Popover open={feedbackOpen} onOpenChange={setFeedbackOpen}>
               <PopoverTrigger asChild>
@@ -109,7 +118,7 @@ export function NavBar() {
               >
                 <form onSubmit={handleFeedbackSubmit} className="space-y-4">
                   <div className="space-y-2">
-                    <h4 className="font-medium text-sm leading-none text-neutral-900 dark:text-neutral-50">
+                    <h4 className="font-medium text-sm leading-none">
                       Send us feedback
                     </h4>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400">

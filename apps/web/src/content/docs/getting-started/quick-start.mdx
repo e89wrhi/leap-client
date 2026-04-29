@@ -1,0 +1,54 @@
+---
+title: Quick Start
+slug: getting-started/quick-start
+date: 2026-04-29
+description: Send your first AI request with Leap SDK in under 5 minutes.
+category: Getting Started
+order: 2
+---
+
+# Quick Start
+
+Welcome to the Leap AI SDK! This guide will help you get up and running with your first AI-powered application using .NET.
+
+## Your First Chat Request
+
+Leap AI is built around a fluent **pipeline builder** pattern. You start by creating a `LeapClient`, configuring it with a provider, and then calling one of the generation methods.
+
+```csharp
+using Leap.AI.Core;
+using Leap.AI.Providers.OpenAi;
+
+// 1. Configure the pipeline and provider
+var leap = LeapClient.Create()
+    .UseOpenAi("your-api-key-here", "gpt-4o-mini")
+    .Build();
+
+// 2. Generate a response!
+string response = await leap.GenerateTextAsync("Hello, what can you do?");
+
+Console.WriteLine(response);
+```
+
+### Breakdown of the Code
+1.  **`LeapClient.Create()`**: Initializes the fluent builder.
+2.  **`.UseOpenAi(...)`**: Configures the OpenAI provider with your API key and the model you want to use.
+3.  **`.Build()`**: Finalizes the configuration and returns a thread-safe `LeapClient` instance.
+4.  **`GenerateTextAsync`**: Sends a simple string prompt and returns the result as a string.
+
+## Streaming Example
+
+For a more responsive UI, you can stream tokens as they are generated:
+
+```csharp
+await foreach (var chunk in leap.StreamAsync("Write a short poem about code."))
+{
+    Console.Write(chunk.Text);
+}
+```
+
+## Next Steps
+
+- Explore [Chat API](/docs/core-concepts/chat-and-streaming) for advanced message handling.
+- Learn about [Structured Data](/docs/core-concepts/structured-data) for type-safe JSON extraction.
+- See supported [Providers](/docs/integrations/providers) and models.
