@@ -21,7 +21,7 @@ using Leap.AI.Providers.OpenAi;
 
 // 1. Configure the pipeline and provider
 var leap = LeapClient.Create()
-    .UseOpenAi("your-api-key-here", "gpt-4o-mini")
+    .UseOpenAi("your-api-key-here", "gpt-4o-mini") // Or .UseAnthropic() / .UseGoogle() / .UseXAi()
     .Build();
 
 // 2. Generate a response!

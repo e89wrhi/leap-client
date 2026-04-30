@@ -40,6 +40,15 @@ var leap = LeapClient.Create()
     .Build();
 ```
 
+### xAI
+Native support for Grok-2 and Grok-3 models.
+
+```csharp
+var leap = LeapClient.Create()
+    .UseXAi("your-api-key", "grok-2")
+    .Build();
+```
+
 ## Custom REST Providers
 
 To implement your own provider, simply create a class that implements `ILeapProvider` from the `Leap.AI.Core.Abstractions` project.

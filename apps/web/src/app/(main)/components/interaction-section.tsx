@@ -31,9 +31,9 @@ const PROVIDERS = [
   {
     id: 'grok',
     name: 'xAI',
-    method: 'UseGrok',
-    model: 'grok-1',
-    namespace: 'Grok',
+    method: 'UseXAi',
+    model: 'grok-2',
+    namespace: 'xAI',
     logo: '/models/grok.png',
   },
 ];
@@ -173,7 +173,7 @@ function CodeBlock({ code }: { code: string }) {
   const comments = /(\/\/.*)/g;
   const types = /\b(LeapClient|FunctionTool|ChatMessage|Recipe|WeatherArgs)\b/g;
   const methods =
-    /\.(Create|UseOpenAi|UseAnthropic|UseGoogle|UseGrok|UseRetry|UseTool|Build|GenerateTextAsync|StreamAsync|GenerateObjectAsync|WriteLine|Write)\b/g;
+    /\.(Create|UseOpenAi|UseAnthropic|UseGoogle|UseXAi|UseRetry|UseTool|Build|GenerateTextAsync|StreamAsync|GenerateObjectAsync|WriteLine|Write)\b/g;
 
   const highlight = (line: string) => {
     return line
@@ -222,7 +222,7 @@ function CodeBlock({ code }: { code: string }) {
 
 export function InteractionSection() {
   const [activeTab, setActiveTab] = useState('text');
-  const [activeProvider, setActiveProvider] = useState(PROVIDERS[0]);
+  const [activeProvider, setActiveProvider] = useState<Provider>(PROVIDERS[0]!);
   const tab = TABS.find((t) => t.id === activeTab)!;
   const dynamicCode = getTabCode(activeTab, activeProvider);
 
