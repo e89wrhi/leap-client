@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const STATS = [
-  { value: '3', label: 'AI Providers' },
+  { value: '4', label: 'AI Providers' },
   { value: '100+', label: 'Models supported' },
   { value: '5', label: 'NuGet Packages' },
   { value: '.NET 10', label: 'Native support' },
@@ -10,7 +10,7 @@ const STATS = [
 const FEATURES = [
   {
     title: 'Multi-provider support.',
-    description: 'Switch between OpenAI, Anthropic & Google with one line of code.',
+    description: 'Switch between OpenAI, Anthropic, Google & xAI with one line of code.',
   },
   {
     title: 'Streaming that just works.',
@@ -32,7 +32,7 @@ const PACKAGES = [
   {
     name: 'Leap.AI.Providers.*',
     description:
-      'Provider adapters for OpenAI, Anthropic, and Google Gemini — install only what you need.',
+      'Provider adapters for OpenAI, Anthropic, Google Gemini, and xAI — install only what you need.',
     href: 'https://www.nuget.org/packages/LeapAi.Sdk',
   },
 ];
